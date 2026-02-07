@@ -53,7 +53,7 @@ def calculate_sp500_normalized_pe(sp500_data, m2_data):
     plt.ylabel('Normalized P/E Ratio')
     plt.legend()
     plt.grid()
-    plt.savefig('reports/sp500_normalized_pe.png')
+    plt.savefig('reports/figures/sp500_normalized_pe.png')
     plt.show()
 
     return merged_data[['date', 'value', 'M2SL', 'Normalized_PE']]
@@ -62,9 +62,7 @@ if __name__ == "__main__":
 
     # Example usage
     sp500_data = pd.read_csv('data/sp-500-pe-ratio-price-to-earnings-chart.csv')
-    print(sp500_data.head())
 
     m2_data = pd.read_csv('data/M2SL.csv')
 
     result = calculate_sp500_normalized_pe(sp500_data, m2_data)
-    print(result)
